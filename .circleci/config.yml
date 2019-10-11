@@ -3,7 +3,7 @@ version: 2.1
 # release must exist; you'll need to publish manually at least once)
 # you can use scripts/publish-alpha.sh to publish a @dev:alpha release
 orbs:
-  <orb-name>: kevinchee/aws-code-deploy@dev:alpha
+  <orb-name>: CircleCI-Public/aws-code-deploy-orb@dev:alpha
   orb-tools: circleci/orb-tools@8.27.3
 workflows:
   # this `lint-pack_validate_publish-dev` workflow will run on any commit
@@ -22,7 +22,7 @@ workflows:
       # store CIRCLE_TOKEN as a project env var or Contexts resource
       # if using Contexts, add your context below
       - orb-tools/publish-dev:
-          orb-name: kevinchee/aws-code-deploy
+          orb-name: CircleCI-Public/aws-code-deploy-orb
           requires:
             - orb-tools/pack
       # trigger an integration workflow to test the dev version of your orb
